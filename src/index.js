@@ -111,8 +111,9 @@ fastify.post("/attempt-login", async (req, reply) => {
 
   const accounts = await readAccounts();
   const account = accounts[key];
+  const numericCode = Number(code);
 
-  if (!account || account.pin !== code || account.locked) {
+  if (!account || Number.isNaN(numericCode) || account.pin !== numericCode || account.locked) {
     return { success: false };
   }
 
