@@ -18,6 +18,7 @@ import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
 const publicPath = fileURLToPath(new URL("../public/", import.meta.url));
+const searchPath = join(publicPath, "s");
 
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
 
@@ -44,8 +45,18 @@ const fastify = Fastify({
 });
 
 fastify.register(fastifyStatic, {
-	root: publicPath,
-	decorateReply: true,
+        root: publicPath,
+        decorateReply: true,
+});
+
+fastify.register(fastifyStatic, {
+  root: searchPath,
+  prefix: "/s/",
+  decorateReply: false,
+});
+
+fastify.get("/s", (req, reply) => {
+  return reply.sendFile("index.html", { root: searchPath });
 });
 
 fastify.register(fastifyStatic, {
