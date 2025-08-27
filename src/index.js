@@ -75,15 +75,19 @@ fastify.register(fastifyStatic, {
         decorateReply: true,
 });
 
-fastify.register(fastifyStatic, {
-  root: searchPath,
-  prefix: "/s/",
-  decorateReply: false,
-});
-
-fastify.get("/s", (req, reply) => {
-  return reply.sendFile("index.html", { root: searchPath });
-});
+fastify.register(
+  (app, _, done) => {
+    app.register(fastifyStatic, {
+      root: searchPath,
+      wildcard: false,
+    });
+    app.setNotFoundHandler((req, reply) => {
+      return reply.sendFile("index.html");
+    });
+    done();
+  },
+  { prefix: "/s" },
+);
 
 fastify.register(fastifyStatic, {
   root: scramjetDistPath,
