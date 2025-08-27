@@ -1,82 +1,128 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-		/>
-		<title>Scramjet</title>
-		<base href="/s/" />
 
-		<link rel="shortcut icon" content="favicon.ico" />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<title>Scramjet</title>
+	<base href="/s/" />
 
-		<link rel="stylesheet" href="index.css" />
-		<link rel="stylesheet" href="../output.css" />
-		<script src="/scram/scramjet.all.js"></script>
-		<script src="/baremux/index.js" defer></script>
-		<script src="/epoxy/index.js" defer></script>
-		<script src="register-sw.js" defer></script>
-		<script src="search.js" defer></script>
-		<script src="index.js" defer></script>
-	</head>
+	<link rel="shortcut icon" content="favicon.ico" />
 
-	<body>
-		
-		<div
-			title="Scramjet Logo"
-			class="flex-center logo-wrapper header-center"
-		>
-			<img class="logo" src="../assets/imgs/new.png" alt="" />
-			<h1 class="text-4xl mt-4" >StudyBee Notes Dashboard</h1>
-		</div>
-		<div class="flex-center desc left-margin text-center">
-			<p class="mt-4" >
-				Search the StudyBee database below! Powered by open-sourced help from Scramjet @ Mercury Workshop.
-			</p>
-		</div>
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="../output.css" />
+	<script src="/scram/scramjet.all.js"></script>
+	<script src="/baremux/index.js" defer></script>
+	<script src="/epoxy/index.js" defer></script>
+	<script src="register-sw.js" defer></script>
+	<script src="search.js" defer></script>
+	<script src="index.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-		<form id="sj-form" class="flex-center mt-4">
-			<input
-				id="sj-search-engine"
-				value="https://www.google.com/search?q=%s"
-				type="hidden"
-			/>
-			<input id="sj-address" type="text" placeholder="Search Database Banks..." />
-		</form>
-		<div class="desc left-margin">
-			<p id="sj-error"></p>
-			<pre id="sj-error-code"></pre>
-		</div>
-		<footer>
-			<div>
-				<a
-					title="The Mercury Workshop GitHub organization"
-					href="https://github.com/MercuryWorkshop"
-					>Mercury Workshop</a
-				>
-				<a
-					title="The example demo app for Scramjet"
-					href="https://github.com/MercuryWorkshop/Scramjet-Demo"
-					>GitHub</a
-				>
-				<a title="License information" href="credits.html">Credits</a>
-			</div>
-			<div>
-				<span>Scramjet &copy; MW 2025</span>
-			</div>
-		</footer>
+</head>
 
-		<script>
-			fetch('/auth')
+<body>
+
+	<script>
+		fetch('/auth')
 			.then(res => res.json())
 			.then(data => {
 				if (!data.authenticated) {
 					window.location.href = '/login';
 				}
 			});
-		</script>
+	</script>
 
-		<iframe style="display: none" id="sj-frame"></iframe>
-	</body>
+	<div class="my-4">
+
+
+	</div>
+
+	<div title="" class="flex-center logo-wrapper header-center ">
+		<img class="logo" src="../assets/imgs/new.png" alt="" />
+		<h1 class="text-4xl mt-4">StudyBee Notes Dashboard</h1>
+	</div>
+
+
+	<div class="flex-center desc left-margin text-center">
+		<p class="mt-4">
+			Search the StudyBee database below! Powered by open-sourced help from Scramjet @ Mercury Workshop.
+		</p>
+	</div>
+
+	<form id="sj-form" class="flex-center mt-4">
+		<input id="sj-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+		<input id="sj-address" type="text" placeholder="Search Database Banks..." />
+	</form>
+	<div class="desc left-margin">
+		<p id="sj-error"></p>
+		<pre id="sj-error-code"></pre>
+	</div>
+
+
+	<!--
+  Make sure you add some bottom padding to pages that include a sticky banner like this to prevent
+  your content from being obscured when the user scrolls to the bottom of the page.
+-->
+	<div class="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
+		<div
+			class="pointer-events-auto flex items-center justify-between gap-x-6 bg-red-900 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pr-3.5 sm:pl-4 dark:bg-red-800 dark:inset-ring dark:inset-ring-white/10">
+			<p class="text-sm/6 text-white">
+				<a href="/about">
+					<strong>CLICK TO RETURN TO HOME</strong>
+				</a>
+			</p>
+		</div>
+	</div>
+
+
+	<!-- Global notification live region, render this permanently at the end of the document -->
+	<div aria-live="assertive" class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start">
+		<div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+			<div
+				class="ml-auto flex-center rounded-md bg-yellow-50 p-4 dark:bg-yellow-500/10 dark:outline dark:outline-yellow-500/15">
+				<div class="flex">
+					<div class="shrink-0">
+						<svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+							class="size-5 text-yellow-400 dark:text-yellow-300">
+							<path
+								d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+								clip-rule="evenodd" fill-rule="evenodd" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<h3 class="text-sm font-medium text-yellow-800 dark:text-yellow-100">IMPORTANT FOR YOUR SAFETY
+							(PLEASE READ)</h3>
+						<div class="mt-2 text-sm text-yellow-700 dark:text-yellow-100/80">
+							<p>StudyBee search is NOT perfectly secure, and malfunctions within cookie saving and the
+								fact that search IP is centralized MAY result in logins being lost or account cookies
+								malfunctioning. If you can, try not to log into any accounts using the service and
+								instead search without logging in. Additionally, some websites may outright not allow
+								you to sign in, including google.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div>
+			<a title="The Mercury Workshop GitHub organization" href="https://github.com/MercuryWorkshop">Mercury
+				Workshop</a>
+			<a title="The example demo app for Scramjet"
+				href="https://github.com/MercuryWorkshop/Scramjet-Demo">GitHub</a>
+			<a title="License information" href="credits.html">Credits</a>
+		</div>
+		<div>
+			<span>Scramjet &copy; MW 2025</span>
+		</div>
+	</footer>
+
+
+
+	<iframe style="display: none" id="sj-frame"></iframe>
+</body>
+
 </html>

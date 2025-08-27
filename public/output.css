@@ -7,6 +7,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-yellow-50: oklch(98.7% 0.026 102.212);
+    --color-yellow-100: oklch(97.3% 0.071 103.193);
+    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
+    --color-yellow-700: oklch(55.4% 0.135 66.442);
+    --color-yellow-800: oklch(47.6% 0.114 61.907);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-100: oklch(93% 0.034 272.788);
     --color-indigo-300: oklch(78.5% 0.115 274.713);
@@ -42,7 +49,7 @@
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
@@ -56,8 +63,8 @@
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
-    --font-weight-bold: 700;
     --tracking-tight: -0.025em;
+    --tracking-normal: 0em;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
@@ -354,6 +361,9 @@
   .-mr-96 {
     margin-right: calc(var(--spacing) * -96);
   }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
   .block {
     display: block;
   }
@@ -459,6 +469,9 @@
   }
   .flex-none {
     flex: none;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
   }
   .border-separate {
     border-collapse: separate;
@@ -692,6 +705,9 @@
       background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
   }
+  .bg-yellow-50 {
+    background-color: var(--color-yellow-50);
+  }
   .bg-linear-to-b {
     --tw-gradient-position: to bottom;
     @supports (background-image: linear-gradient(in lab, red, red)) {
@@ -731,6 +747,9 @@
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -810,10 +829,6 @@
   .text-left {
     text-align: left;
   }
-  .text-2xl\/9 {
-    font-size: var(--text-2xl);
-    line-height: calc(var(--spacing) * 9);
-  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -854,13 +869,13 @@
     font-size: var(--text-sm);
     line-height: calc(var(--spacing) * 6);
   }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
   .text-xs\/5 {
     font-size: var(--text-xs);
     line-height: calc(var(--spacing) * 5);
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -873,6 +888,10 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-normal {
+    --tw-tracking: var(--tracking-normal);
+    letter-spacing: var(--tracking-normal);
   }
   .tracking-tight {
     --tw-tracking: var(--tracking-tight);
@@ -904,6 +923,15 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .text-yellow-400 {
+    color: var(--color-yellow-400);
+  }
+  .text-yellow-700 {
+    color: var(--color-yellow-700);
+  }
+  .text-yellow-800 {
+    color: var(--color-yellow-800);
   }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -1690,6 +1718,14 @@
       }
     }
   }
+  .dark\:bg-yellow-500\/10 {
+    @media (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, oklch(79.5% 0.184 86.047) 10%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-yellow-500) 10%, transparent);
+      }
+    }
+  }
   .dark\:from-gray-900 {
     @media (prefers-color-scheme: dark) {
       --tw-gradient-from: var(--color-gray-900);
@@ -1750,6 +1786,24 @@
       color: var(--color-white);
     }
   }
+  .dark\:text-yellow-100 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-yellow-100);
+    }
+  }
+  .dark\:text-yellow-100\/80 {
+    @media (prefers-color-scheme: dark) {
+      color: color-mix(in srgb, oklch(97.3% 0.071 103.193) 80%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-yellow-100) 80%, transparent);
+      }
+    }
+  }
+  .dark\:text-yellow-300 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-yellow-300);
+    }
+  }
   .dark\:shadow-none {
     @media (prefers-color-scheme: dark) {
       --tw-shadow: 0 0 #0000;
@@ -1785,6 +1839,12 @@
       }
     }
   }
+  .dark\:outline {
+    @media (prefers-color-scheme: dark) {
+      outline-style: var(--tw-outline-style);
+      outline-width: 1px;
+    }
+  }
   .dark\:-outline-offset-1 {
     @media (prefers-color-scheme: dark) {
       outline-offset: calc(1px * -1);
@@ -1795,6 +1855,14 @@
       outline-color: color-mix(in srgb, #fff 10%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         outline-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+      }
+    }
+  }
+  .dark\:outline-yellow-500\/15 {
+    @media (prefers-color-scheme: dark) {
+      outline-color: color-mix(in srgb, oklch(79.5% 0.184 86.047) 15%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        outline-color: color-mix(in oklab, var(--color-yellow-500) 15%, transparent);
       }
     }
   }

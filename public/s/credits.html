@@ -12,6 +12,17 @@
 	</head>
 
 	<body>
+
+    <script>
+        fetch('/auth')
+          .then(res => res.json())
+          .then(data => {
+            if (!data.authenticated) {
+              window.location.href = '/login';
+            }
+          });
+      </script>
+
 		<div class="logo-wrapper left-margin">
 			<h1>Scramjet | Credits</h1>
 		</div>
