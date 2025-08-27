@@ -1,1 +1,3 @@
-let _CONFIG = {};
+let _CONFIG = {
+  prefix: '/s/'
+};
