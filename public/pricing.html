@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="StudyBee" />
+  <meta name="description" content="The better path to learning." />
+  <link rel="icon" type="image/x-icon" href="/public/assets/imgs/logo.png" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <title>StudyBee</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="bg-white dark:bg-gray-900">
+    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">StudyBee</span>
+          <img src="./assets/imgs/new.png" alt="" class="h-8 w-auto dark:hidden" />
+          <img src="./assets/imgs/new.png" alt="" class="h-8 w-auto not-dark:hidden" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+            aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Home</a>
+        <a href="/about" class="text-sm/6 font-semibold text-gray-900 dark:text-white">About</a>
+        <a href="/pricing" class="text-sm/6 font-semibold text-gray-900 dark:text-white">Pricing</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="/login" class="text-sm/6 font-semibold text-gray-900 dark:text-white">User Portal <span
+            aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">StudyBee</span>
+                <img src="./assets/imgs/new.png" alt="" class="h-8 w-auto dark:hidden" />
+                <img src="./assets/imgs/new.png" alt="" class="h-8 w-auto not-dark:hidden" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                  aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="/"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Home</a>
+                  <a href="/about"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">About</a>
+                  <a href="/pricing"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Pricing</a>
+                </div>
+                <div class="py-6">
+                  <a href="/login"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">User
+                    Portal</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+
+  <form class="group/tiers isolate overflow-hidden bg-white dark:bg-gray-900">
+    <div
+      class="flow-root border-b border-b-transparent bg-gray-900 pt-24 pb-16 sm:pt-32 lg:pb-0 dark:border-b-white/5 dark:bg-gray-800/25">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="relative z-10">
+          <h2
+            class="mx-auto max-w-4xl text-center text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl">
+            Plans that scale with your goals</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+            Whether you're studying solo, diving into premium tools, or managing a full classroom—StudyBee has a plan
+            that works for
+            you.</p>
+          <div class="mt-16 flex justify-center">
+            <fieldset aria-label="Payment frequency">
+              <div
+                class="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs/5 font-semibold text-white">
+                <label class="group relative rounded-full px-2.5 py-1 has-checked:bg-indigo-500">
+                  <input type="radio" name="frequency" value="monthly" checked
+                    class="absolute inset-0 appearance-none rounded-full" />
+                  <span class="text-white">Monthly</span>
+                </label>
+                <label class="group relative rounded-full px-2.5 py-1 has-checked:bg-indigo-500">
+                  <input type="radio" name="frequency" value="annually"
+                    class="absolute inset-0 appearance-none rounded-full" />
+                  <span class="text-white">Annually</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          class="relative mx-auto mt-10 grid max-w-md grid-cols-1 gap-y-8 lg:mx-0 lg:-mb-14 lg:max-w-none lg:grid-cols-3">
+          <svg viewBox="0 0 1208 1024" aria-hidden="true"
+            class="absolute -bottom-48 left-1/2 h-256 -translate-x-1/2 translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] lg:-top-48 lg:bottom-auto lg:translate-y-0">
+            <ellipse cx="604" cy="512" rx="604" ry="512" fill="url(#d25c25d4-6d43-4bf9-b9ac-1842a30a4867)" />
+            <defs>
+              <radialGradient id="d25c25d4-6d43-4bf9-b9ac-1842a30a4867">
+                <stop stop-color="#7775D6" />
+                <stop offset="1" stop-color="#E935C1" />
+              </radialGradient>
+            </defs>
+          </svg>
+          <div aria-hidden="true"
+            class="hidden lg:absolute lg:inset-x-px lg:top-4 lg:bottom-0 lg:block lg:rounded-t-2xl lg:bg-gray-800/80 lg:ring-1 lg:ring-white/10">
+          </div>
+          <div
+            class="group/tier relative rounded-2xl bg-gray-800/80 outline-1 -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0">
+            <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
+              <h3 id="tier-tier-starter"
+                class="text-sm/6 font-semibold text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                Student Plan</h3>
+              <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-x-4">
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $19</p>
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $199</p>
+                  <div class="text-sm">
+                    <p
+                      class="text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                      USD</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed monthly</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed annually</p>
+                  </div>
+                </div>
+                <a type="submit" name="tier" value="tier-starter" aria-describedby="tier-tier-starter"
+                  href="mailto:studybee-support.clasp821@passfwd.com"
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white not-group-data-featured:inset-ring not-group-data-featured:inset-ring-white/5 group-data-featured/tier:bg-indigo-600 group-data-featured/tier:shadow-xs hover:bg-white/20 group-data-featured/tier:hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-featured/tier:focus-visible:outline-indigo-600 dark:group-data-featured/tier:bg-indigo-500 dark:group-data-featured/tier:shadow-none dark:group-data-featured/tier:hover:bg-indigo-400 dark:group-data-featured/tier:focus-visible:outline-indigo-500">Purchase</a>
+              </div>
+              <div class="mt-8 flow-root sm:mt-10">
+                <ul role="list"
+                  class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm/6 text-white group-data-featured/tier:divide-gray-900/5 group-data-featured/tier:border-gray-900/5 group-data-featured/tier:text-gray-600 lg:border-t-0 dark:group-data-featured/tier:divide-white/10 dark:group-data-featured/tier:border-white/10 dark:group-data-featured/tier:text-white">
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Secure browser-based access
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Daily session tracking
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Smart reminders
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div data-featured="true"
+            class="group/tier relative z-10 rounded-2xl bg-white shadow-xl outline-1 outline-gray-900/10 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
+              <h3 id="tier-tier-scale"
+                class="text-sm/6 font-semibold text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                Pro+</h3>
+              <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-x-4">
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $99</p>
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $999</p>
+                  <div class="text-sm">
+                    <p
+                      class="text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                      USD</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed monthly</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed annually</p>
+                  </div>
+                </div>
+                <a type="submit" name="tier" value="tier-scale" aria-describedby="tier-tier-scale"
+                  href="mailto:studybee-support.clasp821@passfwd.com"
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white not-group-data-featured:inset-ring not-group-data-featured:inset-ring-white/5 group-data-featured/tier:bg-indigo-600 group-data-featured/tier:shadow-xs hover:bg-white/20 group-data-featured/tier:hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-featured/tier:focus-visible:outline-indigo-600 dark:group-data-featured/tier:bg-indigo-500 dark:group-data-featured/tier:shadow-none dark:group-data-featured/tier:hover:bg-indigo-400 dark:group-data-featured/tier:focus-visible:outline-indigo-500">Purchase</a>
+              </div>
+              <div class="mt-8 flow-root sm:mt-10">
+                <ul role="list"
+                  class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm/6 text-white group-data-featured/tier:divide-gray-900/5 group-data-featured/tier:border-gray-900/5 group-data-featured/tier:text-gray-600 lg:border-t-0 dark:group-data-featured/tier:divide-white/10 dark:group-data-featured/tier:border-white/10 dark:group-data-featured/tier:text-white">
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Everything in Student Plan
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Cross-device syncing
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Unlimited session history
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Custom study module builder
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Visual progress analytics
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Priority support via email
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group/tier relative rounded-2xl bg-gray-800/80 outline-1 -outline-offset-1 outline-white/10 lg:bg-transparent lg:pb-14 lg:outline-0">
+            <div class="p-8 lg:pt-12 xl:p-10 xl:pt-14">
+              <h3 id="tier-tier-growth"
+                class="text-sm/6 font-semibold text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                For Educators</h3>
+              <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:flex-col lg:items-stretch">
+                <div class="mt-2 flex items-center gap-x-4">
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $49 /user</p>
+                  <p
+                    class="text-4xl font-semibold tracking-tight text-white group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                    $499 /user</p>
+                  <div class="text-sm">
+                    <p
+                      class="text-white group-data-featured/tier:text-gray-900 dark:group-data-featured/tier:text-white">
+                      USD</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed monthly</p>
+                    <p
+                      class="text-gray-400 group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden group-data-featured/tier:text-gray-500 dark:group-data-featured/tier:text-gray-400">
+                      Billed annually</p>
+                  </div>
+                </div>
+                <a href="mailto:studybee-support.clasp821@passfwd.com" type="submit" name="tier" value="tier-growth"
+                  aria-describedby="tier-tier-growth"
+                  class="w-full rounded-md bg-white/10 px-3 py-2 text-center text-sm/6 font-semibold text-white not-group-data-featured:inset-ring not-group-data-featured:inset-ring-white/5 group-data-featured/tier:bg-indigo-600 group-data-featured/tier:shadow-xs hover:bg-white/20 group-data-featured/tier:hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 group-data-featured/tier:focus-visible:outline-indigo-600 dark:group-data-featured/tier:bg-indigo-500 dark:group-data-featured/tier:shadow-none dark:group-data-featured/tier:hover:bg-indigo-400 dark:group-data-featured/tier:focus-visible:outline-indigo-500">Contact
+                  Sales</a>
+              </div>
+              <div class="mt-8 flow-root sm:mt-10">
+                <ul role="list"
+                  class="-my-2 divide-y divide-white/5 border-t border-white/5 text-sm/6 text-white group-data-featured/tier:divide-gray-900/5 group-data-featured/tier:border-gray-900/5 group-data-featured/tier:text-gray-600 lg:border-t-0 dark:group-data-featured/tier:divide-white/10 dark:group-data-featured/tier:border-white/10 dark:group-data-featured/tier:text-white">
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    All users recieve Pro+ access
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Dedicated admin dashboard
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Curriculum alignment mapping
+                  </li>
+                  <li class="flex gap-x-3 py-2">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                      class="h-6 w-5 flex-none text-gray-500 group-data-featured/tier:text-indigo-600 dark:group-data-featured/tier:text-indigo-400">
+                      <path
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                    </svg>
+                    Role-based access control
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white py-24 dark:bg-gray-900">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Everything admins need</h2>
+          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+            And with the educator suite?</p>
+          <p class="mt-6 text-lg/8 text-gray-700 dark:text-gray-300">StudyBee’s Educator Suite equips schools with
+            secure, scalable tools to manage student learning at scale—with just
+            enough buzzwords to make it sound like we know what we’re doing.</p>
+        </div>
+        <dl
+          class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16 dark:text-gray-400">
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Centralized Admin Console
+            </dt>
+            <dd class="inline">Manage users, assign roles, and deploy access policies across your institution from one
+              sleek, web-based panel. </dd>
+          </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Compliant Data Controls
+            </dt>
+            <dd class="inline">StudyBee meets all educational privacy standards like FERPA and GDPR.
+            </dd>
+          </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M15.312 11.424a5.5 5.5 0 0 1-9.201 2.466l-.312-.311h2.433a.75.75 0 0 0 0-1.5H3.989a.75.75 0 0 0-.75.75v4.242a.75.75 0 0 0 1.5 0v-2.43l.31.31a7 7 0 0 0 11.712-3.138.75.75 0 0 0-1.449-.39Zm1.23-3.723a.75.75 0 0 0 .219-.53V2.929a.75.75 0 0 0-1.5 0V5.36l-.31-.31A7 7 0 0 0 3.239 8.188a.75.75 0 1 0 1.448.389A5.5 5.5 0 0 1 13.89 6.11l.311.31h-2.432a.75.75 0 0 0 0 1.5h4.243a.75.75 0 0 0 .53-.219Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Auto Roster Sync
+            </dt>
+            <dd class="inline">Import students from SIS platforms or spreadsheets and keep rosters synced in real-time.
+            </dd>
+          </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M10 2.5c-1.31 0-2.526.386-3.546 1.051a.75.75 0 0 1-.82-1.256A8 8 0 0 1 18 9a22.47 22.47 0 0 1-1.228 7.351.75.75 0 1 1-1.417-.49A20.97 20.97 0 0 0 16.5 9 6.5 6.5 0 0 0 10 2.5ZM4.333 4.416a.75.75 0 0 1 .218 1.038A6.466 6.466 0 0 0 3.5 9a7.966 7.966 0 0 1-1.293 4.362.75.75 0 0 1-1.257-.819A6.466 6.466 0 0 0 2 9c0-1.61.476-3.11 1.295-4.365a.75.75 0 0 1 1.038-.219ZM10 6.12a3 3 0 0 0-3.001 3.041 11.455 11.455 0 0 1-2.697 7.24.75.75 0 0 1-1.148-.965A9.957 9.957 0 0 0 5.5 9c0-.028.002-.055.004-.082a4.5 4.5 0 0 1 8.996.084V9.15l-.005.297a.75.75 0 1 1-1.5-.034c.003-.11.004-.219.005-.328a3 3 0 0 0-3-2.965Zm0 2.13a.75.75 0 0 1 .75.75c0 3.51-1.187 6.745-3.181 9.323a.75.75 0 1 1-1.186-.918A13.687 13.687 0 0 0 9.25 9a.75.75 0 0 1 .75-.75Zm3.529 3.698a.75.75 0 0 1 .584.885 18.883 18.883 0 0 1-2.257 5.84.75.75 0 1 1-1.29-.764 17.386 17.386 0 0 0 2.078-5.377.75.75 0 0 1 .885-.584Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Curriculum Tag Mapping
+            </dt>
+            <dd class="inline">Align student sessions with your school's existing learning standards, or design your
+              own.
+            </dd>
+          </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Seamless LMS Integration
+            </dt>
+            <dd class="inline">Connect to Google Classroom, Canvas, or any other LMS being used by your district.
+            </dd>
+          </div>
+          <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-900 dark:text-white">
+              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-500">
+                <path
+                  d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                <path
+                  d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              Bulk Report Exports
+            </dt>
+            <dd class="inline">Download full-class progress data in CSV or PDF formats for clean transmission.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="relative bg-gray-50 lg:pt-14 dark:bg-gray-900">
+      <div class="mx-auto max-w-7xl px-6   lg:px-8">
+
+        <!-- Feature comparison (lg+) -->
+        <section aria-labelledby="comparison-heading" class="hidden lg:block">
+          <h2 id="comparison-heading" class="sr-only">Feature comparison</h2>
+
+          <div class="grid grid-cols-4 gap-x-8 border-t border-gray-900/10 before:block dark:border-white/10">
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-transparent pt-10">
+                <p class="text-sm/6 font-semibold text-gray-900 dark:text-white">Student</p>
+                <p class="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">For independent learners.</p>
+              </div>
+            </div>
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-indigo-600 pt-10 dark:border-indigo-500">
+                <p class="text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400">Pro+</p>
+                <p class="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">For dedicated students.</p>
+              </div>
+            </div>
+            <div aria-hidden="true" class="-mt-px">
+              <div class="border-t-2 border-transparent pt-10">
+                <p class="text-sm/6 font-semibold text-gray-900 dark:text-white">Educator Suite (per user)</p>
+                <p class="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">For full-classroom solutions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="-mt-6 space-y-16">
+            <div>
+              <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Features</h3>
+              <div class="relative -mx-8 mt-10">
+                <!-- Fake card backgrounds -->
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                </div>
+
+                <table class="relative w-full border-separate border-spacing-x-8">
+                  <thead>
+                    <tr class="text-left">
+                      <th scope="col">
+                        <span class="sr-only">Feature</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Student tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Pro+ tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Educator Suite tier</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Distraction-Free Study Mode
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Custom Subject Categories
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 text-gray-900 dark:text-white">1</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400">Unlimited</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 text-gray-900 dark:text-white">3</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Linked Devices
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 text-gray-900 dark:text-white">3</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 font-semibold text-indigo-600 dark:text-indigo-400">Unlimited</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <span class="text-sm/6 text-gray-900 dark:text-white">20</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">Single
+                        Sign-On (SSO)</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Fake card borders -->
+                <div aria-hidden="true"
+                  class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                  <div class="rounded-lg ring-2 ring-indigo-600 dark:ring-indigo-500"></div>
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Performance Insights</h3>
+              <div class="relative -mx-8 mt-10">
+                <!-- Fake card backgrounds -->
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                </div>
+
+                <table class="relative w-full border-separate border-spacing-x-8">
+                  <thead>
+                    <tr class="text-left">
+                      <th scope="col">
+                        <span class="sr-only">Feature</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Student tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Pro+ tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Educator Suite tier</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Time Spent Per Subject
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Session Breakdown Reports
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Trend & Progress Charts
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">Custom
+                        Goal Tracking</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Fake card borders -->
+                <div aria-hidden="true"
+                  class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                  <div class="rounded-lg ring-2 ring-indigo-600 dark:ring-indigo-500"></div>
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-white">Support & Community</h3>
+              <div class="relative -mx-8 mt-10">
+                <!-- Fake card backgrounds -->
+                <div aria-hidden="true" class="absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                  <div class="size-full rounded-lg bg-white shadow-xs dark:bg-gray-800/50 dark:shadow-none"></div>
+                </div>
+
+                <table class="relative w-full border-separate border-spacing-x-8">
+                  <thead>
+                    <tr class="text-left">
+                      <th scope="col">
+                        <span class="sr-only">Feature</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Starter tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Scale tier</span>
+                      </th>
+                      <th scope="col">
+                        <span class="sr-only">Growth tier</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        24/7 Self-Help Center
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Live Workshops
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">
+                        Priority Email Support
+                        <div class="absolute inset-x-8 mt-3 h-px bg-gray-200 dark:bg-white/10"></div>
+                      </th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"
+                        class="w-1/4 py-3 pr-4 text-left text-sm/6 font-normal text-gray-900 dark:text-white">1-on-1
+                        Study Planning Call</th>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-indigo-600 dark:text-indigo-400">
+                            <path
+                              d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                              clip-rule="evenodd" fill-rule="evenodd" />
+                          </svg>
+                          <span class="sr-only">Yes</span>
+                        </span>
+                      </td>
+                      <td class="relative w-1/4 px-4 py-0 text-center">
+                        <span class="relative size-full py-3">
+                          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                            class="mx-auto size-5 text-gray-400 dark:text-gray-600">
+                            <path
+                              d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                          </svg>
+                          <span class="sr-only">No</span>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Fake card borders -->
+                <div aria-hidden="true"
+                  class="pointer-events-none absolute inset-x-8 inset-y-0 grid grid-cols-4 gap-x-8 before:block">
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                  <div class="rounded-lg ring-2 ring-indigo-600 dark:ring-indigo-500"></div>
+                  <div class="rounded-lg ring-1 ring-gray-900/10 dark:ring-white/10"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </form>
+
+
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/shortcuts.js"></script>
+  <script src="assets/js/elements/greeting.js"></script>
+  <script src="assets/js/elements/ping.js"></script>
+  <!-- UV Files -->
+  <script src="/search/bundle.js"></script>
+  <script src="/search/config.js"></script>
+  <!-- DO NOT REMOVE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <!-- DO NOT REMOVE -->
+  <script>
+    const form = document.getElementById('uv-form');
+    const address = document.getElementById('searchbar');
+    const searchEngine = document.getElementById('uv-search-engine');
+    const error = document.getElementById('uv-error');
+    const errorCode = document.getElementById('uv-error-code');
+    const input = document.querySelector('input');
+
+    // crypts class definition
+    class crypts {
+      static encode(str) {
+        return encodeURIComponent(
+          str
+            .toString()
+            .split('')
+            .map((char, ind) => (ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char))
+            .join('')
+        );
+      }
+
+      static decode(str) {
+        if (str.charAt(str.length - 1) === '/') {
+          str = str.slice(0, -1);
+        }
+        return decodeURIComponent(
+          str
+            .split('')
+            .map((char, ind) => (ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char))
+            .join('')
+        );
+      }
+    }
+
+    function search(input) {
+      input = input.trim();
+      const searchTemplate = localStorage.getItem('engine') || 'https://google.com/search?q=%s';
+
+      try {
+        return new URL(input).toString();
+      } catch (err) {
+        try {
+          const url = new URL(`http://${input}`);
+          if (url.hostname.includes('.')) {
+            return url.toString();
+          }
+          throw new Error('Invalid hostname');
+        } catch (err) {
+          return searchTemplate.replace('%s', encodeURIComponent(input));
+        }
+      }
+    }
+    if ('serviceWorker' in navigator) {
+      var proxySetting = 'uv';
+      let swConfig = {
+        uv: { file: '/search/sw.js', config: __uv$config },
+      };
+
+      let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
+
+      navigator.serviceWorker
+        .register(swFile, { scope: swConfigSettings.prefix })
+        .then((registration) => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
+            sessionStorage.setItem('encodedUrl', encodedUrl);
+            location.href = '/search';
+          });
+        })
+        .catch((error) => {
+          console.error('ServiceWorker registration failed:', error);
+        });
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: InterVariable, sans-serif;
+      --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      }
+    </style>
+
+</body>
+
+</html>

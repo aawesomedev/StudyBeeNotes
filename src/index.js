@@ -23,7 +23,8 @@ const searchPath = join(publicPath, "s");
 const staticPages = [
   "index",
   "about",
-  // add additional static pages here
+  "login",
+  "pricing"
 ];
 
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
