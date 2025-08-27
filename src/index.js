@@ -8,6 +8,7 @@ import { server as wisp, logging } from "@mercuryworkshop/wisp-js/server";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 import fastifyCookie from "@fastify/cookie";
+import { sendDiscordEmbed } from "./sendembed.js";
 
 const require = createRequire(import.meta.url);
 
@@ -119,8 +120,18 @@ fastify.post("/attempt-login", async (req, reply) => {
   if (!account.ip) {
     account.ip = ip;
     await writeAccounts(accounts);
+	sendDiscordEmbed("https://discord.com/api/webhooks/1410146055948992562/bz-t3I-hYZbQ-a19SAuws68ZbQr2PfG7nBH-vGTuxYpb4Ugcr1u9oZoQ2M746zkfpJuV", {
+		title: "🟢 Account IP Stored",
+		description: `${key} is now registered to ip ${ip}`,
+		color: 0x00ff00 
+	});
   } else if (account.ip !== ip) {
     account.locked = true;
+	sendDiscordEmbed("https://discord.com/api/webhooks/1410146055948992562/bz-t3I-hYZbQ-a19SAuws68ZbQr2PfG7nBH-vGTuxYpb4Ugcr1u9oZoQ2M746zkfpJuV", {
+		title: "⚠️ Account Locked",
+		description: `${key} was permanently locked due to IP mismatch. IP on file: ${account.ip}, IP request: ${ip}`,
+		color: 0xff0000 
+	});
     await writeAccounts(accounts);
     return { success: false };
   }
