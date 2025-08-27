@@ -20,6 +20,12 @@ import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 const publicPath = fileURLToPath(new URL("../public/", import.meta.url));
 const searchPath = join(publicPath, "s");
 
+const staticPages = [
+  "index",
+  "about",
+  // add additional static pages here
+];
+
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
 
 logging.set_level(logging.NONE);
@@ -72,13 +78,20 @@ fastify.register(fastifyStatic, {
 });
 
 fastify.register(fastifyStatic, {
-	root: baremuxPath,
-	prefix: "/baremux/",
-	decorateReply: false,
+        root: baremuxPath,
+        prefix: "/baremux/",
+        decorateReply: false,
+});
+
+staticPages.forEach((page) => {
+  const routePath = page === "index" ? "/" : `/${page}`;
+  fastify.get(routePath, (req, reply) => {
+    return reply.sendFile(`${page}.html`);
+  });
 });
 
 fastify.setNotFoundHandler((res, reply) => {
-	return reply.code(404).type('text/html').sendFile('404.html');
+        return reply.code(404).type('text/html').sendFile('404.html');
 })
 
 fastify.server.on("listening", () => {
