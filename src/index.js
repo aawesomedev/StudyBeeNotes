@@ -3,9 +3,11 @@ import { fileURLToPath } from "url";
 import { hostname } from "node:os";
 import { dirname, join } from "path";
 import { createRequire } from "module";
+import { readFile, writeFile } from "node:fs/promises";
 import { server as wisp, logging } from "@mercuryworkshop/wisp-js/server";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
+import fastifyCookie from "@fastify/cookie";
 
 const require = createRequire(import.meta.url);
 
@@ -26,6 +28,20 @@ const staticPages = [
   "login",
   "pricing"
 ];
+
+const accountsPath = fileURLToPath(new URL("../accounts.json", import.meta.url));
+
+async function readAccounts() {
+  try {
+    return JSON.parse(await readFile(accountsPath, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+async function writeAccounts(accounts) {
+  await writeFile(accountsPath, JSON.stringify(accounts, null, 2));
+}
 
 // Wisp Configuration: Refer to the documentation at https://www.npmjs.com/package/@mercuryworkshop/wisp-js
 
@@ -50,6 +66,8 @@ const fastify = Fastify({
 			});
 	},
 });
+
+fastify.register(fastifyCookie);
 
 fastify.register(fastifyStatic, {
         root: publicPath,
@@ -82,6 +100,47 @@ fastify.register(fastifyStatic, {
         root: baremuxPath,
         prefix: "/baremux/",
         decorateReply: false,
+});
+
+fastify.post("/attempt-login", async (req, reply) => {
+  const { key, code } = req.body || {};
+  if (!key || !code) {
+    return { success: false };
+  }
+
+  const accounts = await readAccounts();
+  const account = accounts[key];
+
+  if (!account || account.pin !== code || account.locked) {
+    return { success: false };
+  }
+
+  const ip = req.ip;
+  if (!account.ip) {
+    account.ip = ip;
+    await writeAccounts(accounts);
+  } else if (account.ip !== ip) {
+    account.locked = true;
+    await writeAccounts(accounts);
+    return { success: false };
+  }
+
+  reply.setCookie("session", key, { path: "/", httpOnly: true });
+  return { success: true };
+});
+
+fastify.get("/auth", async (req, reply) => {
+  const accounts = await readAccounts();
+  const key = req.cookies.session;
+  if (!key) {
+    return { authenticated: false };
+  }
+
+  const account = accounts[key];
+  if (!account || account.locked || account.ip !== req.ip) {
+    return { authenticated: false };
+  }
+  return { authenticated: true };
 });
 
 staticPages.forEach((page) => {
