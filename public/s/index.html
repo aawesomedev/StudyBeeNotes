@@ -12,6 +12,7 @@
                 <link rel="shortcut icon" content="favicon.ico" />
 
                 <link rel="stylesheet" href="index.css" />
+                <link rel="stylesheet" href="../output.css" />
                 <script src="/scram/scramjet.all.js"></script>
                 <script src="/baremux/index.js" defer></script>
                 <script src="/epoxy/index.js" defer></script>
@@ -21,26 +22,27 @@
 	</head>
 
 	<body>
+		
 		<div
 			title="Scramjet Logo"
 			class="flex-center logo-wrapper header-center"
 		>
 			<img class="logo" src="../assets/imgs/new.png" alt="" />
-			<h1>StudyBee Dashboard</h1>
+			<h1 class="text-4xl mt-4" >StudyBee Notes Dashboard</h1>
 		</div>
-		<div class="flex-center desc left-margin">
-			<p>
-				Search the StudyBee database below!
+		<div class="flex-center desc left-margin text-center">
+			<p class="mt-4" >
+				Search the StudyBee database below! Powered by open-sourced help from Scramjet @ Mercury Workshop.
 			</p>
 		</div>
 
-		<form id="sj-form" class="flex-center">
+		<form id="sj-form" class="flex-center mt-4">
 			<input
 				id="sj-search-engine"
 				value="https://www.google.com/search?q=%s"
 				type="hidden"
 			/>
-			<input id="sj-address" type="text" placeholder="Search the web freely" />
+			<input id="sj-address" type="text" placeholder="Search Database Banks..." />
 		</form>
 		<div class="desc left-margin">
 			<p id="sj-error"></p>
