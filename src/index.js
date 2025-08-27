@@ -77,9 +77,13 @@ fastify.register(fastifyStatic, {
 
 fastify.register(
   (app, _, done) => {
+    // Allow the /s prefix to serve static assets and fall back to the
+    // proxy dashboard for any unknown paths. Using a wildcard route lets
+    // Fastify hand off unmatched requests to the not found handler below
+    // instead of returning a 404 from the root static handler.
     app.register(fastifyStatic, {
       root: searchPath,
-      wildcard: false,
+      wildcard: true,
     });
     app.setNotFoundHandler((req, reply) => {
       return reply.sendFile("index.html");
