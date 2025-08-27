@@ -75,19 +75,20 @@ fastify.register(fastifyStatic, {
         decorateReply: true,
 });
 
-fastify.register(
-  (app, _, done) => {
-    app.register(fastifyStatic, {
-      root: searchPath,
-      wildcard: false,
-    });
-    app.setNotFoundHandler((req, reply) => {
-      return reply.sendFile("index.html");
-    });
-    done();
-  },
-  { prefix: "/s" },
-);
+// Serve the proxy dashboard under /s and ensure any unknown paths under
+// that prefix resolve back to the dashboard rather than the global 404.
+fastify.register(fastifyStatic, {
+  root: searchPath,
+  prefix: "/s/",
+  decorateReply: false,
+});
+
+// Fallback route for any request under /s that wasn't matched by a static
+// file above. This returns the dashboard's index.html so the Scramjet
+// service worker can handle client-side routing.
+fastify.get("/s/*", (req, reply) => {
+  return reply.sendFile("index.html", searchPath);
+});
 
 fastify.register(fastifyStatic, {
   root: scramjetDistPath,
